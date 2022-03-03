@@ -1,0 +1,28 @@
+' Casos de uso podem ser visualizados em https://www.plantuml.com
+
+@startuml casos-de-uso
+
+Sistema -down-> (Enviar lembretes)
+
+(Entrar em contato) as Contato
+
+Visitante -down-> (Cadastrar-se)
+Visitante -down-> (Identificar-se)
+Visitante -left-> Contato
+
+Usuário as Usuario
+Usuario -down-> (Editar informações\npessoais)
+Usuario -> (Submeter relatório)
+Usuario -left-> (Visualizar relatórios\nsubmetidos)
+Usuario -> Contato
+
+Supervisor as Professor
+Professor --|> Usuario
+Professor -left-> (Convidar usuários)
+Professor -left-> (Gerenciar projetos)
+Professor -> (Visualizar relatórios de\nseus projetos)
+
+Admin --|> Professor
+Admin -> (Gerenciar usuários)
+
+@enduml
